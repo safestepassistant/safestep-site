@@ -5,113 +5,27 @@
   <title>SafeStep – Feel Safe. Move Smart.</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      line-height: 1.6;
-      background-color: #f8f9fa;
-      color: #212529;
-    }
-    header {
-      background: #000;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .features {
-      display: grid;
-      gap: 20px;
-    }
-    .feature, .team, .how-it-works {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-      margin-top: 20px;
-    }
-    .cta {
-      text-align: center;
-      background: #007bff;
-      color: white;
-      padding: 40px 20px;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-    .cta a, .cta button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: white;
-      color: #007bff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-    }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch button {
-      background: transparent;
-      border: none;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-left: 10px;
-      cursor: pointer;
-      color: #007bff;
-    }
-    .how-it-works img, .team img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin-top: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    input {
-      padding: 10px;
-      width: 100%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { line-height: 1.6; background-color: #f8f9fa; color: #212529; }
+    header { background: #000; color: white; padding: 60px 20px; text-align: center; position: relative; }
+    header h1 { font-size: 2.8rem; margin-bottom: 15px; }
+    header p { font-size: 1.2rem; }
+    section { padding: 60px 20px; max-width: 900px; margin: auto; }
+    .features { display: grid; gap: 20px; }
+    .feature, .team, .how-it-works { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); margin-top: 20px; }
+    .cta { text-align: center; background: #007bff; color: white; padding: 40px 20px; border-radius: 12px; margin-top: 40px; }
+    .cta a, .cta button { display: inline-block; margin-top: 20px; padding: 12px 25px; background: white; color: #007bff; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; }
+    footer { text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #666; }
+    .lang-switch { position: absolute; top: 20px; right: 20px; font-size: 1rem; }
+    .lang-switch button { background: transparent; border: none; font-weight: bold; font-size: 1rem; margin-left: 8px; cursor: pointer; color: #007bff; }
+    .how-it-works img, .team img { width: 100%; max-width: 400px; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    form { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px; }
+    input { padding: 10px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 6px; }
   </style>
 </head>
 <body>
   <div class="lang-switch">
-    <button onclick="setLanguage('en')">EN</button>
+    🌐 <button onclick="setLanguage('en')">EN</button>
     <button onclick="setLanguage('uz')">UZ</button>
     <button onclick="setLanguage('ru')">RU</button>
   </div>
@@ -153,8 +67,10 @@
   </section>  <section>
     <h2 id="teamTitle">Meet the Team</h2>
     <div class="team" style="text-align: center;">
-      <img src="https://i.postimg.cc/bGgXmsv7/yourimage.jpg" alt="Founder of SafeStep">
-      <p id="teamText">SafeStep was created by passionate students who care about real-world safety.</p>
+      <img src="https://i.postimg.cc/xcwv3pQW/yourimage.jpg" alt="Azimova Sarvinoz">
+      <h3>Azimova Sarvinoz</h3>
+      <p>Founder & CEO of SafeStep</p>
+      <p>Student at New Uzbekistan University, passionate about tech and safety.</p>
     </div>
   </section>  <section>
     <h2 id="howTitle">How It Works</h2>
@@ -165,10 +81,10 @@
         <li>Send alert if you feel unsafe</li>
         <li>Your data is stored safely & contact is alerted</li>
       </ol>
-      <img src="https://i.postimg.cc/8P5HfWkn/start-bot.png" alt="Start bot">
-      <img src="https://i.postimg.cc/7LtFmHdT/allow-location.png" alt="Allow location">
-      <img src="https://i.postimg.cc/zvnJ4zRk/send-alert.png" alt="Send alert">
-      <img src="https://i.postimg.cc/T3RC9Wv7/data-saved.png" alt="Data stored">
+      <img src="https://i.ibb.co/8gSpR1v/start-bot.png" alt="Start bot">
+      <img src="https://i.ibb.co/vwCKqLC/allow-location.png" alt="Allow location">
+      <img src="https://i.ibb.co/T0p1nhN/send-alert.png" alt="Send alert">
+      <img src="https://i.ibb.co/y6M1cb4/data-saved.png" alt="Data stored">
     </div>
   </section>  <footer>
     © 2025 SafeStep. All rights reserved. | Contact: safestep@gmail.com
@@ -201,44 +117,3 @@
     }
   </script></body>
 </html>
-<section id="team" class="team-section">
-  <h2>Meet the Team</h2>
-  <div class="team-member">
-    <img src="https://i.postimg.cc/xcwv3pQW/yourimage.jpg" alt="Founder" class="founder-img">
-    <h3>Xurshida Azimova</h3>
-    <p>Founder & CEO of SafeStep</p>
-  </div>
-</section>
-.team-member {
-  text-align: center;
-  margin-top: 40px;
-}
-.founder-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border: 3px solid #fff;
-}
-<div class="lang-switch">
-  🌐 
-  <button onclick="setLanguage('en')">EN</button>
-  <button onclick="setLanguage('uz')">UZ</button>
-  <button onclick="setLanguage('ru')">RU</button>
-</div>
-.lang-switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1rem;
-}
-.lang-switch button {
-  background: transparent;
-  border: none;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-left: 8px;
-  cursor: pointer;
-  color: #007bff;
-}
