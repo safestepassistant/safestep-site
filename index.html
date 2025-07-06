@@ -54,7 +54,7 @@
       border-radius: 12px;
       margin-top: 40px;
     }
-    .cta a {
+    .cta a, .cta button {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 25px;
@@ -63,6 +63,8 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      cursor: pointer;
+      border: none;
     }
     footer {
       text-align: center;
@@ -84,10 +86,26 @@
       cursor: pointer;
       color: #007bff;
     }
-    .how-it-works img {
+    .how-it-works img, .team img {
       width: 100%;
+      max-width: 400px;
       border-radius: 10px;
       margin-top: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    input {
+      padding: 10px;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -120,9 +138,14 @@
       </div>
     </div>
   </section>  <section class="cta">
-    <h2 id="waitlistTitle">Ready to Stay Safe?</h2>
-    <p id="waitlistText">Sign up now and be the first to try SafeStep when it launches.</p>
-    <a id="waitlistBtn" href="https://forms.gle/yV6Uv3VoFSUJ3yaQ7" target="_blank">Join the Waitlist</a>
+    <h2 id="waitlistTitle">Join the Waitlist</h2>
+    <p id="waitlistText">Be the first to try SafeStep.</p>
+    <form action="https://formspree.io/f/xleqglkg" method="POST">
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="text" name="address" placeholder="Your city / region" required />
+      <input type="date" name="birthdate" placeholder="Birthdate" required />
+      <button type="submit" id="waitlistBtn">Submit</button>
+    </form>
   </section>  <section class="cta">
     <h2 id="telegramTitle">Talk to SafeStep Assistant</h2>
     <p id="telegramText">Need help or feel unsafe? Get support instantly on Telegram.</p>
@@ -130,7 +153,7 @@
   </section>  <section>
     <h2 id="teamTitle">Meet the Team</h2>
     <div class="team" style="text-align: center;">
-      <img src="https://i.postimg.cc/bGgXmsv7/yourimage.jpg" alt="Founder of SafeStep" style="max-width: 220px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px;">
+      <img src="https://i.postimg.cc/bGgXmsv7/yourimage.jpg" alt="Founder of SafeStep">
       <p id="teamText">SafeStep was created by passionate students who care about real-world safety.</p>
     </div>
   </section>  <section>
@@ -140,17 +163,20 @@
         <li>Start the Telegram bot</li>
         <li>Allow location & camera access</li>
         <li>Send alert if you feel unsafe</li>
-        <li>Your data is safely stored & your trusted contact is alerted</li>
+        <li>Your data is stored safely & contact is alerted</li>
       </ol>
-      <img src="https://i.postimg.cc/Yq3MD8GB/howitworks-steps.jpg" alt="How It Works Illustration">
+      <img src="https://i.postimg.cc/8P5HfWkn/start-bot.png" alt="Start bot">
+      <img src="https://i.postimg.cc/7LtFmHdT/allow-location.png" alt="Allow location">
+      <img src="https://i.postimg.cc/zvnJ4zRk/send-alert.png" alt="Send alert">
+      <img src="https://i.postimg.cc/T3RC9Wv7/data-saved.png" alt="Data stored">
     </div>
   </section>  <footer>
     © 2025 SafeStep. All rights reserved. | Contact: safestep@gmail.com
   </footer>  <script>
     const translations = {
-      en: { title: "SafeStep", subtitle: "Feel Safe. Move Smart.", about: "About Us", aboutText: "SafeStep is your personal safety companion...", features: "Features", feature1: "📍 Real-Time Location Sharing", feature2: "🎥 Media Evidence Backup", feature3: "🛡️ Trusted Account Alerts", waitlistTitle: "Ready to Stay Safe?", waitlistText: "Sign up now and be the first to try SafeStep when it launches.", waitlistBtn: "Join the Waitlist", telegramTitle: "Talk to SafeStep Assistant", telegramText: "Need help or feel unsafe? Get support instantly on Telegram.", telegramBtn: "Open Telegram Bot", teamTitle: "Meet the Team", teamText: "SafeStep was created by passionate students who care about real-world safety.", howItWorks: "How It Works" },
-      uz: { title: "SafeStep", subtitle: "O‘zingizni xavfsiz tuting. Aql bilan harakat qiling.", about: "Biz haqimizda", aboutText: "SafeStep — bu sizning shaxsiy xavfsizlik yordamchingiz...", features: "Xususiyatlar", feature1: "📍 Haqiqiy vaqtda joylashuvni ulashish", feature2: "🎥 Rasmlar va videolarni xavfsiz saqlash", feature3: "🛡️ Ishonchli kontaktlarga xavf signali yuborish", waitlistTitle: "Xavfsizlikka tayyormisiz?", waitlistText: "Hoziroq ro‘yxatdan o‘ting va birinchi bo‘lib SafeStep’ni sinab ko‘ring.", waitlistBtn: "Kutuvchilar ro‘yxatiga qo‘shiling", telegramTitle: "SafeStep yordamchisi bilan bog‘laning", telegramText: "O‘zingizni xavfsiz his qilmayapsizmi? Telegram orqali yordam oling.", telegramBtn: "Telegram botni ochish", teamTitle: "Bizning jamoamiz", teamText: "SafeStep — bu haqiqatdagi xavfsizlikni ta'minlashni istagan yoshlar tomonidan yaratilgan.", howItWorks: "Qanday ishlaydi" },
-      ru: { title: "SafeStep", subtitle: "Чувствуйте себя в безопасности. Двигайтесь умно.", about: "О нас", aboutText: "SafeStep — ваш личный помощник по безопасности...", features: "Возможности", feature1: "📍 Делитесь местоположением в реальном времени", feature2: "🎥 Сохраняйте фото и видео в облако", feature3: "🛡️ Срочные оповещения для доверенных контактов", waitlistTitle: "Готовы к безопасности?", waitlistText: "Присоединяйтесь к списку и станьте первыми пользователями SafeStep.", waitlistBtn: "Присоединиться к списку ожидания", telegramTitle: "Напишите помощнику SafeStep", telegramText: "Нужна помощь? Свяжитесь с ботом в Telegram.", telegramBtn: "Открыть Telegram-бот", teamTitle: "Наша команда", teamText: "SafeStep создан молодыми людьми, которые заботятся о реальной безопасности.", howItWorks: "Как это работает" }
+      en: { title: "SafeStep", subtitle: "Feel Safe. Move Smart.", about: "About Us", aboutText: "SafeStep is your personal safety companion...", features: "Features", feature1: "📍 Real-Time Location Sharing", feature2: "🎥 Media Evidence Backup", feature3: "🛡️ Trusted Account Alerts", waitlistTitle: "Join the Waitlist", waitlistText: "Be the first to try SafeStep.", waitlistBtn: "Submit", telegramTitle: "Talk to SafeStep Assistant", telegramText: "Need help or feel unsafe? Get support instantly on Telegram.", telegramBtn: "Open Telegram Bot", teamTitle: "Meet the Team", teamText: "SafeStep was created by passionate students who care about real-world safety.", howItWorks: "How It Works" },
+      uz: { title: "SafeStep", subtitle: "O‘zingizni xavfsiz tuting. Aql bilan harakat qiling.", about: "Biz haqimizda", aboutText: "SafeStep — bu sizning shaxsiy xavfsizlik yordamchingiz...", features: "Xususiyatlar", feature1: "📍 Haqiqiy vaqtda joylashuvni ulashish", feature2: "🎥 Rasmlar va videolarni xavfsiz saqlash", feature3: "🛡️ Ishonchli kontaktlarga xavf signali yuborish", waitlistTitle: "Kutuvchilar ro‘yxati", waitlistText: "SafeStep’ni birinchi bo‘lib sinang.", waitlistBtn: "Yuborish", telegramTitle: "SafeStep yordamchisi bilan bog‘laning", telegramText: "O‘zingizni xavfsiz his qilmayapsizmi? Telegram orqali yordam oling.", telegramBtn: "Telegram botni ochish", teamTitle: "Bizning jamoamiz", teamText: "SafeStep — bu haqiqatdagi xavfsizlikni ta'minlashni istagan yoshlar tomonidan yaratilgan.", howItWorks: "Qanday ishlaydi" },
+      ru: { title: "SafeStep", subtitle: "Чувствуйте себя в безопасности. Двигайтесь умно.", about: "О нас", aboutText: "SafeStep — ваш личный помощник по безопасности...", features: "Возможности", feature1: "📍 Делитесь местоположением в реальном времени", feature2: "🎥 Сохраняйте фото и видео в облако", feature3: "🛡️ Срочные оповещения для доверенных контактов", waitlistTitle: "Список ожидания", waitlistText: "Попробуйте SafeStep первым.", waitlistBtn: "Отправить", telegramTitle: "Напишите помощнику SafeStep", telegramText: "Нужна помощь? Свяжитесь с ботом в Telegram.", telegramBtn: "Открыть Telegram-бот", teamTitle: "Наша команда", teamText: "SafeStep создан молодыми людьми, которые заботятся о реальной безопасности.", howItWorks: "Как это работает" }
     };
 
     function setLanguage(lang) {
