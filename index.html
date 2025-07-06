@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,6 +84,11 @@
       cursor: pointer;
       color: #007bff;
     }
+    .how-it-works img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -96,14 +100,10 @@
   <header>
     <h1 id="title">SafeStep</h1>
     <p id="subtitle">Feel Safe. Move Smart.</p>
-  </header>
-
-  <section>
+  </header>  <section>
     <h2 id="about">About Us</h2>
     <p id="aboutText">SafeStep is your personal safety companion...</p>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2 id="features">Features</h2>
     <div class="features">
       <div class="feature">
@@ -119,28 +119,21 @@
         <p>Send emergency alerts to your pre-selected trusted contacts in one tap.</p>
       </div>
     </div>
-  </section>
-
-  <section class="cta">
+  </section>  <section class="cta">
     <h2 id="waitlistTitle">Ready to Stay Safe?</h2>
     <p id="waitlistText">Sign up now and be the first to try SafeStep when it launches.</p>
     <a id="waitlistBtn" href="https://forms.gle/yV6Uv3VoFSUJ3yaQ7" target="_blank">Join the Waitlist</a>
-  </section>
-
-  <section class="cta">
+  </section>  <section class="cta">
     <h2 id="telegramTitle">Talk to SafeStep Assistant</h2>
     <p id="telegramText">Need help or feel unsafe? Get support instantly on Telegram.</p>
     <a id="telegramBtn" href="https://t.me/SafeStepAssistantbot" target="_blank">Open Telegram Bot</a>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2 id="teamTitle">Meet the Team</h2>
-    <div class="team">
+    <div class="team" style="text-align: center;">
+      <img src="https://i.postimg.cc/bGgXmsv7/yourimage.jpg" alt="Founder of SafeStep" style="max-width: 220px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px;">
       <p id="teamText">SafeStep was created by passionate students who care about real-world safety.</p>
     </div>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2 id="howTitle">How It Works</h2>
     <div class="how-it-works">
       <ol>
@@ -149,14 +142,11 @@
         <li>Send alert if you feel unsafe</li>
         <li>Your data is safely stored & your trusted contact is alerted</li>
       </ol>
+      <img src="https://i.postimg.cc/Yq3MD8GB/howitworks-steps.jpg" alt="How It Works Illustration">
     </div>
-  </section>
-
-  <footer>
+  </section>  <footer>
     © 2025 SafeStep. All rights reserved. | Contact: safestep@gmail.com
-  </footer>
-
-  <script>
+  </footer>  <script>
     const translations = {
       en: { title: "SafeStep", subtitle: "Feel Safe. Move Smart.", about: "About Us", aboutText: "SafeStep is your personal safety companion...", features: "Features", feature1: "📍 Real-Time Location Sharing", feature2: "🎥 Media Evidence Backup", feature3: "🛡️ Trusted Account Alerts", waitlistTitle: "Ready to Stay Safe?", waitlistText: "Sign up now and be the first to try SafeStep when it launches.", waitlistBtn: "Join the Waitlist", telegramTitle: "Talk to SafeStep Assistant", telegramText: "Need help or feel unsafe? Get support instantly on Telegram.", telegramBtn: "Open Telegram Bot", teamTitle: "Meet the Team", teamText: "SafeStep was created by passionate students who care about real-world safety.", howItWorks: "How It Works" },
       uz: { title: "SafeStep", subtitle: "O‘zingizni xavfsiz tuting. Aql bilan harakat qiling.", about: "Biz haqimizda", aboutText: "SafeStep — bu sizning shaxsiy xavfsizlik yordamchingiz...", features: "Xususiyatlar", feature1: "📍 Haqiqiy vaqtda joylashuvni ulashish", feature2: "🎥 Rasmlar va videolarni xavfsiz saqlash", feature3: "🛡️ Ishonchli kontaktlarga xavf signali yuborish", waitlistTitle: "Xavfsizlikka tayyormisiz?", waitlistText: "Hoziroq ro‘yxatdan o‘ting va birinchi bo‘lib SafeStep’ni sinab ko‘ring.", waitlistBtn: "Kutuvchilar ro‘yxatiga qo‘shiling", telegramTitle: "SafeStep yordamchisi bilan bog‘laning", telegramText: "O‘zingizni xavfsiz his qilmayapsizmi? Telegram orqali yordam oling.", telegramBtn: "Telegram botni ochish", teamTitle: "Bizning jamoamiz", teamText: "SafeStep — bu haqiqatdagi xavfsizlikni ta'minlashni istagan yoshlar tomonidan yaratilgan.", howItWorks: "Qanday ishlaydi" },
@@ -183,6 +173,5 @@
       document.getElementById('teamText').innerText = t.teamText;
       document.getElementById('howTitle').innerText = t.howItWorks;
     }
-  </script>
-</body>
+  </script></body>
 </html>
