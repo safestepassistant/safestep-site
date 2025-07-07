@@ -1,252 +1,202 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeStep – Feel Safe. Move Smart.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeStep</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
     body {
-      line-height: 1.6;
-      background-color: #f8f9fa;
-      color: #212529;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5fbff;
+      color: #333;
     }
     header {
-      background: #000;
+      background-color: #0d47a1;
       color: white;
-      padding: 60px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
+      margin: 0;
+      font-size: 40px;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 20px;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    nav.language-switcher {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      background-color: #e3f2fd;
     }
-    .features {
-      display: grid;
-      gap: 20px;
-    }
-    .feature {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    }
-    .cta {
-      text-align: center;
-      background: #007bff;
+    nav.language-switcher button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #1976d2;
       color: white;
-      padding: 40px 20px;
-      border-radius: 12px;
-      margin-top: 40px;
+      cursor: pointer;
     }
-    .cta a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: white;
-      color: #007bff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #bbdefb;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-section {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .form-section h2 {
+      margin-bottom: 20px;
+    }
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .form-section button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .how-it-works {
+      background-color: #f1f8ff;
+      padding: 60px 20px;
+    }
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .step {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .step img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .meet-team {
+      background-color: #e3f2fd;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .meet-team img {
+      width: 180px;
+      border-radius: 16px;
+      margin: 20px auto;
+      display: block;
     }
     footer {
+      background-color: #0d47a1;
+      color: white;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
+  <nav class="language-switcher">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('uz')">O'zbek</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+  </nav>
+
   <header>
     <h1>SafeStep</h1>
-    <p>Feel Safe. Move Smart.</p>
+    <p>Your safety is one tap away</p>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p style="margin-top: 10px;">
-      SafeStep is your personal safety companion. Whether you're walking home late, traveling alone, or need to keep trusted people in the loop — SafeStep has your back.
-    </p>
+  <section class="hero">
+    <h2>Smart & Secure Emergency Assistance</h2>
+    <p>With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.</p>
   </section>
 
-  <section>
-    <h2>Features</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>📍 Real-Time Location Sharing</h3>
-        <p>Let your trusted contacts know where you are, instantly.</p>
+  <section class="form-section">
+    <h2>Join the Waitlist</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+      <input type="text" name="full_name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="address" placeholder="Home Address" required />
+      <input type="date" name="birthdate" required />
+      <button type="submit">Join Now</button>
+    </form>
+  </section>
+
+  <section id="how-it-works" class="how-it-works">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
+    <div class="steps-container">
+      <div class="step">
+        <img src="https://i.postimg.cc/rd3CN1rn/step1.jpg" alt="Start the Bot">
+        <h3>Step 1: Start the Bot</h3>
+        <p>Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
       </div>
-      <div class="feature">
-        <h3>🎥 Media Evidence Backup</h3>
-        <p>Automatically save images/videos to secure cloud if you feel unsafe.</p>
+      <div class="step">
+        <img src="https://i.postimg.cc/HjH3ZtNR/step2.jpg" alt="Allow Location">
+        <h3>Step 2: Allow Location</h3>
+        <p>Give the bot permission to access your live location when needed.</p>
       </div>
-      <div class="feature">
-        <h3>🛡️ Trusted Account Alerts</h3>
-        <p>Send emergency alerts to your pre-selected trusted contacts in one tap.</p>
+      <div class="step">
+        <img src="https://i.postimg.cc/tY4ky4pz/step3.jpg" alt="Send Alert">
+        <h3>Step 3: Send Alert</h3>
+        <p>Send an SOS alert to your trusted contacts with just one tap.</p>
+      </div>
+      <div class="step">
+        <img src="https://i.postimg.cc/LJr3zkfy/step4.jpg" alt="Data Secured">
+        <h3>Step 4: Stay Safe</h3>
+        <p>Your data is securely stored and accessible to trusted accounts only.</p>
       </div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2>Ready to Stay Safe?</h2>
-    <p>Sign up now and be the first to try SafeStep when it launches.</p>
-    <a href="https://forms.gle/yV6Uv3VoFSUJ3yaQ7" target="_blank">Join the Waitlist</a>
-  </section>
-
-  <section class="cta">
-    <h2>Talk to SafeStep Assistant</h2>
-    <p>Need help or feel unsafe? Get support instantly on Telegram.</p>
-    <a href="https://t.me/SafeStepAssistantbot" target="_blank">Open Telegram Bot</a>
+  <section class="meet-team">
+    <h2>Meet the Team</h2>
+    <img src="https://postimg.cc/xcwv3pQW" alt="Azimova Sarvinoz">
+    <p style="font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
   </section>
 
   <footer>
-    © 2025 SafeStep. All rights reserved. | Contact: safestep@gmail.com
+    <p>&copy; 2025 SafeStep. All rights reserved.</p>
   </footer>
+
+  <script>
+    function changeLanguage(lang) {
+      alert("Language switched to: " + lang + " (Functionality coming soon)");
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeStep – Feel Safe. Move Smart.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Avvalgi style qismi shu yerda bo'ladi – xuddi oldingiday */
-    /* Qo‘shimcha style: language selector */
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch button {
-      background: transparent;
-      border: none;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-left: 10px;
-      cursor: pointer;
-      color: #007bff;
-    }
-  </style>
-</head>
-<body>
-  <div class="lang-switch">
-    <button onclick="setLanguage('en')">🇬🇧 EN</button>
-    <button onclick="setLanguage('uz')">🇺🇿 UZ</button>
-    <button onclick="setLanguage('ru')">🇷🇺 RU</button>
-  </div>
-
-  <header>
-    <h1 id="title">SafeStep</h1>
-    <p id="subtitle">Feel Safe. Move Smart.</p>
-  </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section id="team" class="team-section">
-  <h2>Meet the Team</h2>
-  <div class="team-member">
-    <img src="https://i.postimg.cc/xcwv3pQW/yourimage.jpg" alt="Founder" class="founder-img">
-    <h3>Xurshida Azimova</h3>
-    <p>Founder & CEO of SafeStep</p>
-  </div>
-</section>
-.team-member {
-  text-align: center;
-  margin-top: 40px;
-}
-.founder-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border: 3px solid #fff;
-}  
-
-
-
-
-
-
-
-
-
-
-
- <div class="lang-switch">
-  🌐 
-  <button onclick="setLanguage('en')">EN</button>
-  <button onclick="setLanguage('uz')">UZ</button>
-  <button onclick="setLanguage('ru')">RU</button>
-</div>
-  .lang-switch {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 1rem;
-}
-.lang-switch button {
-  background: transparent;
-  border: none;
-  font-weight: bold;
-  font-size: 1rem;
-  margin-left: 8px;
-  cursor: pointer;
-  color: #007bff;
-}
-
-
-
-
-
-
-
-
-  
-  
