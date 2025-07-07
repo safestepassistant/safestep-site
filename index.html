@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,6 +121,19 @@
       margin: 20px auto;
       display: block;
     }
+    .footer-links {
+      background-color: #1976d2;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 0;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
     footer {
       background-color: #0d47a1;
       color: white;
@@ -135,36 +147,27 @@
     <button onclick="changeLanguage('en')">English</button>
     <button onclick="changeLanguage('uz')">O'zbek</button>
     <button onclick="changeLanguage('ru')">Русский</button>
-  </nav>
-
-  <header>
+  </nav>  <header>
     <h1 id="title">SafeStep</h1>
     <p id="subtitle">Your safety is one tap away</p>
-  </header>
-
-  <section class="hero">
+  </header>  <section class="hero">
     <h2 id="hero-heading">Smart & Secure Emergency Assistance</h2>
     <p id="hero-desc">With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.</p>
-  </section>
-
-  <section class="form-section">
+  </section>  <section class="form-section">
     <h2 id="form-title">Join the Waitlist</h2>
     <form action="https://formsubmit.co/azimovasarvinoz2007@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://safestep-site.vercel.app/thanks.html">
       <input type="text" name="full_name" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <input type="text" name="address" placeholder="Home Address" required />
       <input type="date" name="birthdate" required />
       <button type="submit" id="join-btn">Join Now</button>
     </form>
-  </section>
-
-  <section class="bot-section">
+  </section>  <section class="bot-section">
     <h2 id="bot-title">Use Our Telegram Bot</h2>
     <p id="bot-desc">Start using SafeStep by interacting with our secure Telegram bot.</p>
     <a href="https://t.me/SafeStepAssistantbot" target="_blank">Launch Bot</a>
-  </section>
-
-  <section id="how-it-works" class="how-it-works">
+  </section>  <section id="how-it-works" class="how-it-works">
     <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
     <div class="steps-container">
       <div class="step">
@@ -188,19 +191,17 @@
         <p>Your data is securely stored and accessible to trusted accounts only.</p>
       </div>
     </div>
-  </section>
-
-  <section class="meet-team">
+  </section>  <section class="meet-team">
     <h2>Meet the Team</h2>
     <img src="https://i.postimg.cc/xcwv3pQW/formal-portrait.jpg" alt="Azimova Sarvinoz">
     <p style="font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SafeStep.</p>
-  </footer>
-
-  <script>
+  </section>  <div class="footer-links">
+    <a href="#">Contact</a>
+    <a href="#">FAQ</a>
+    <a href="#">Privacy Policy</a>
+  </div>  <footer>
+    <p>&copy; 2025 SafeStep. All rights reserved.</p>
+  </footer>  <script>
     function changeLanguage(lang) {
       const translations = {
         en: {
@@ -245,47 +246,5 @@
       document.getElementById("bot-title").innerText = t.botTitle;
       document.getElementById("bot-desc").innerText = t.botDesc;
     }
-  </script>
-</body>
+  </script></body>
 </html>
-
-
-
-
-<form id="waitlist-form">
-  <!-- Inputlar -->
-</form>
-
-<script>
-  document.getElementById("waitlist-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const full_name = document.querySelector('[name="full_name"]').value;
-    const email = document.querySelector('[name="email"]').value;
-    const address = document.querySelector('[name="address"]').value;
-    const birthdate = document.querySelector('[name="birthdate"]').value;
-
-    fetch("https://32b38ed7-98e6-4022-b92a-88e9201874b5-00-2il7bvym8ccd6.pike.replit.dev/join", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        full_name,
-        email,
-        address,
-        birthdate
-      })
-    })
-    .then(response => {
-      if (response.ok) {
-        alert("Thanks for joining the waitlist!");
-      } else {
-        alert("Error sending data.");
-      }
-    })
-    .catch(error => {
-      alert("Connection error: " + error.message);
-    });
-  });
-</script>
