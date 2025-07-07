@@ -47,12 +47,29 @@
       margin: 0 auto;
     }
     .form-section {
-      max-width: 600px;
+      max-width: 500px;
       margin: 40px auto;
       background-color: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .form-section button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
     }
     .bot-section {
       background-color: #e3f2fd;
@@ -132,7 +149,13 @@
 
   <section class="form-section">
     <h2 id="form-title">Join the Waitlist</h2>
-    <iframe src="https://forms.gle/xWLD1LMN4WZJLoMa7" width="100%" height="540" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <form action="https://formsubmit.co/azimovasarvinoz2007@gmail.com" method="POST">
+      <input type="text" name="full_name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="address" placeholder="Home Address" required />
+      <input type="date" name="birthdate" required />
+      <button type="submit" id="join-btn">Join Now</button>
+    </form>
   </section>
 
   <section class="bot-section">
@@ -186,6 +209,7 @@
           heroHeading: "Smart & Secure Emergency Assistance",
           heroDesc: "With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.",
           formTitle: "Join the Waitlist",
+          joinBtn: "Join Now",
           botTitle: "Use Our Telegram Bot",
           botDesc: "Start using SafeStep by interacting with our secure Telegram bot."
         },
@@ -195,6 +219,7 @@
           heroHeading: "Aqlli va xavfsiz yordam",
           heroDesc: "SafeStep orqali har doim yordam yaqin. Ishonchli odamlarga xabar yuboring va xavfsizligingizni ta'minlang.",
           formTitle: "Ro'yxatga yoziling",
+          joinBtn: "Yozilish",
           botTitle: "Telegram botimizdan foydalaning",
           botDesc: "SafeStep boti bilan xavfsiz aloqa uchun boshlang."
         },
@@ -204,6 +229,7 @@
           heroHeading: "Умная и надёжная помощь",
           heroDesc: "С помощью SafeStep помощь всегда под рукой. Быстро оповестите доверенных людей и будьте в безопасности.",
           formTitle: "Присоединяйтесь к ожиданию",
+          joinBtn: "Присоединиться",
           botTitle: "Используйте нашего Telegram-бота",
           botDesc: "Начните использовать SafeStep через нашего безопасного Telegram-бота."
         }
@@ -215,6 +241,7 @@
       document.getElementById("hero-heading").innerText = t.heroHeading;
       document.getElementById("hero-desc").innerText = t.heroDesc;
       document.getElementById("form-title").innerText = t.formTitle;
+      document.getElementById("join-btn").innerText = t.joinBtn;
       document.getElementById("bot-title").innerText = t.botTitle;
       document.getElementById("bot-desc").innerText = t.botDesc;
     }
