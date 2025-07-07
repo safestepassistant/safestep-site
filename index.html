@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,12 +121,6 @@
       margin: 20px auto;
       display: block;
     }
-    footer {
-      background-color: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
   </style>
 </head>
 <body>
@@ -135,19 +128,13 @@
     <button onclick="changeLanguage('en')">English</button>
     <button onclick="changeLanguage('uz')">O'zbek</button>
     <button onclick="changeLanguage('ru')">Русский</button>
-  </nav>
-
-  <header>
+  </nav>  <header>
     <h1 id="title">SafeStep</h1>
     <p id="subtitle">Your safety is one tap away</p>
-  </header>
-
-  <section class="hero">
+  </header>  <section class="hero">
     <h2 id="hero-heading">Smart & Secure Emergency Assistance</h2>
     <p id="hero-desc">With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.</p>
-  </section>
-
-  <section class="form-section">
+  </section>  <section class="form-section">
     <h2 id="form-title">Join the Waitlist</h2>
     <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
       <input type="text" name="full_name" placeholder="Full Name" required />
@@ -156,15 +143,11 @@
       <input type="date" name="birthdate" required />
       <button type="submit" id="join-btn">Join Now</button>
     </form>
-  </section>
-
-  <section class="bot-section">
+  </section>  <section class="bot-section">
     <h2 id="bot-title">Use Our Telegram Bot</h2>
     <p id="bot-desc">Start using SafeStep by interacting with our secure Telegram bot.</p>
     <a href="https://t.me/SafeStepAssistantbot" target="_blank">Launch Bot</a>
-  </section>
-
-  <section id="how-it-works" class="how-it-works">
+  </section>  <section id="how-it-works" class="how-it-works">
     <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
     <div class="steps-container">
       <div class="step">
@@ -188,19 +171,11 @@
         <p>Your data is securely stored and accessible to trusted accounts only.</p>
       </div>
     </div>
-  </section>
-
-  <section class="meet-team">
+  </section>  <section class="meet-team">
     <h2>Meet the Team</h2>
     <img src="https://i.postimg.cc/xcwv3pQW/formal-portrait.jpg" alt="Azimova Sarvinoz">
     <p style="font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SafeStep. All rights reserved.</p>
-  </footer>
-
-  <script>
+  </section>  <script>
     function changeLanguage(lang) {
       const translations = {
         en: {
@@ -245,135 +220,5 @@
       document.getElementById("bot-title").innerText = t.botTitle;
       document.getElementById("bot-desc").innerText = t.botDesc;
     }
-  </script>
-</body>
+  </script></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-function sendTelegram(e) {
-  var name = e.values[1];
-  var email = e.values[2];
-  var address = e.values[3];
-  var birth = e.values[4];
-
-  var message = "🆕 New SafeStep Waitlist:\n👤 Name: " + name + "\n📧 Email: " + email + "\n🏠 Address: " + address + "\n🎂 Birthdate: " + birth;
-
-  var token = "YOUR_BOT_TOKEN";
-  var chatId = "YOUR_TRUSTED_CHAT_ID";
-
-  var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatId + "&text=" + encodeURIComponent(message);
-  UrlFetchApp.fetch(url);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-const express = require('express');
-const fetch = require('node-fetch');
-const cors = require('cors');
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-const BOT_TOKEN = 'YOUR_BOT_TOKEN';
-const CHAT_ID = 'YOUR_CHAT_ID';
-
-app.post('/join', async (req, res) => {
-  const { full_name, email, address, birthdate } = req.body;
-
-  const message = `🆕 New Waitlist Submission:\n👤 Name: ${full_name}\n📧 Email: ${email}\n🏠 Address: ${address}\n🎂 Birthdate: ${birthdate}`;
-
-  try {
-    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
-    });
-
-    res.status(200).send({ success: true });
-  } catch (err) {
-    res.status(500).send({ error: 'Telegram API error' });
-  }
-});
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
-fetch("https://your-server-name.repl.co/join", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    full_name: name,
-    email: email,
-    address: address,
-    birthdate: birthdate,
-  }),
-});
-
-
-
-
-
-
-
-
-
-
-const TELEGRAM_TOKEN = '7793563820:AAFN_t1CXcIm_jBkX6FI3e45Aek81to9uZs';
-const TELEGRAM_CHAT_ID = '631520622';
-
-function onFormSubmit(e) {
-  const responses = e.values;
-  const fullName = responses[1];
-  const email = responses[2];
-  const address = responses[3];
-  const birthdate = responses[4];
-
-  const message = `
-🆕 New Waitlist Submission:
-👤 Name: ${fullName}
-📧 Email: ${email}
-🏠 Address: ${address}
-🎂 Birthdate: ${birthdate}
-`;
-
-  const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
-  const payload = {
-    chat_id: TELEGRAM_CHAT_ID,
-    text: message
-  };
-
-  const options = {
-    method: 'post',
-    contentType: 'application/json',
-    payload: JSON.stringify(payload)
-  };
-
-  UrlFetchApp.fetch(url, options);
-}
-
-
-
-<iframe src="https://forms.gle/xWLD1LMN4WZJLoMa7" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
