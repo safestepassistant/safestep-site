@@ -248,3 +248,29 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+function sendTelegram(e) {
+  var name = e.values[1];
+  var email = e.values[2];
+  var address = e.values[3];
+  var birth = e.values[4];
+
+  var message = "🆕 New SafeStep Waitlist:\n👤 Name: " + name + "\n📧 Email: " + email + "\n🏠 Address: " + address + "\n🎂 Birthdate: " + birth;
+
+  var token = "YOUR_BOT_TOKEN";
+  var chatId = "YOUR_TRUSTED_CHAT_ID";
+
+  var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatId + "&text=" + encodeURIComponent(message);
+  UrlFetchApp.fetch(url);
+}
