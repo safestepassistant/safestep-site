@@ -332,3 +332,48 @@ fetch("https://your-server-name.repl.co/join", {
   }),
 });
 
+
+
+
+
+
+
+
+
+
+const TELEGRAM_TOKEN = '7793563820:AAFN_t1CXcIm_jBkX6FI3e45Aek81to9uZs';
+const TELEGRAM_CHAT_ID = '631520622';
+
+function onFormSubmit(e) {
+  const responses = e.values;
+  const fullName = responses[1];
+  const email = responses[2];
+  const address = responses[3];
+  const birthdate = responses[4];
+
+  const message = `
+🆕 New Waitlist Submission:
+👤 Name: ${fullName}
+📧 Email: ${email}
+🏠 Address: ${address}
+🎂 Birthdate: ${birthdate}
+`;
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
+  const payload = {
+    chat_id: TELEGRAM_CHAT_ID,
+    text: message
+  };
+
+  const options = {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify(payload)
+  };
+
+  UrlFetchApp.fetch(url, options);
+}
+
+
+
+<iframe src="https://forms.gle/xWLD1LMN4WZJLoMa7" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
