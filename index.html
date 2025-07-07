@@ -252,40 +252,40 @@
 
 
 
-
-<section class="form-section">
-  <h2>Join the Waitlist</h2>
-  <form id="waitlist-form">
-    <input type="text" name="full_name" placeholder="Full Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="text" name="address" placeholder="Home Address" required />
-    <input type="date" name="birthdate" required />
-    <button type="submit">Join Now</button>
-  </form>
-  <p id="thank-you-message" style="display:none; color: green; text-align:center; margin-top:20px;">
-    ✅ Thanks for submitting! We’ll get in touch soon.
-  </p>
-</section>
+<form id="waitlist-form">
+  <!-- Inputlar -->
+</form>
 
 <script>
-  document.getElementById('waitlist-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Forma yuborilishini to‘xtatadi
+  document.getElementById("waitlist-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    // Ma’lumotlarni localStorage ga saqlaydi (browserda)
-    const formData = {
-      name: this.full_name.value,
-      email: this.email.value,
-      address: this.address.value,
-      birthdate: this.birthdate.value
-    };
+    const full_name = document.querySelector('[name="full_name"]').value;
+    const email = document.querySelector('[name="email"]').value;
+    const address = document.querySelector('[name="address"]').value;
+    const birthdate = document.querySelector('[name="birthdate"]').value;
 
-    // LocalStorage ga qo‘shish
-    let submissions = JSON.parse(localStorage.getItem('waitlist')) || [];
-    submissions.push(formData);
-    localStorage.setItem('waitlist', JSON.stringify(submissions));
-
-    // Forma tozalanadi va xabar ko‘rsatiladi
-    this.reset();
-    document.getElementById('thank-you-message').style.display = 'block';
+    fetch("https://32b38ed7-98e6-4022-b92a-88e9201874b5-00-2il7bvym8ccd6.pike.replit.dev/join", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        full_name,
+        email,
+        address,
+        birthdate
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Thanks for joining the waitlist!");
+      } else {
+        alert("Error sending data.");
+      }
+    })
+    .catch(error => {
+      alert("Connection error: " + error.message);
+    });
   });
 </script>
