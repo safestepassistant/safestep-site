@@ -275,3 +275,60 @@ function sendTelegram(e) {
   var url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" + chatId + "&text=" + encodeURIComponent(message);
   UrlFetchApp.fetch(url);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+const express = require('express');
+const fetch = require('node-fetch');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const BOT_TOKEN = 'YOUR_BOT_TOKEN';
+const CHAT_ID = 'YOUR_CHAT_ID';
+
+app.post('/join', async (req, res) => {
+  const { full_name, email, address, birthdate } = req.body;
+
+  const message = `🆕 New Waitlist Submission:\n👤 Name: ${full_name}\n📧 Email: ${email}\n🏠 Address: ${address}\n🎂 Birthdate: ${birthdate}`;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
+    });
+
+    res.status(200).send({ success: true });
+  } catch (err) {
+    res.status(500).send({ error: 'Telegram API error' });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+fetch("https://your-server-name.repl.co/join", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    full_name: name,
+    email: email,
+    address: address,
+    birthdate: birthdate,
+  }),
+});
+
