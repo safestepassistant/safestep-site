@@ -2,206 +2,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeStep – Feel Safe. Move Smart.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>SafeStep</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { line-height: 1.6; background-color: #f8f9fa; color: #212529; }
-    header { background: #000; color: white; padding: 60px 20px; text-align: center; position: relative; }
-    header h1 { font-size: 2.8rem; margin-bottom: 15px; }
-    header p { font-size: 1.2rem; }
-    section { padding: 60px 20px; max-width: 900px; margin: auto; }
-    .features { display: grid; gap: 20px; }
-    .feature, .team, .how-it-works { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); margin-top: 20px; }
-    .cta { text-align: center; background: #007bff; color: white; padding: 40px 20px; border-radius: 12px; margin-top: 40px; }
-    .cta a, .cta button { display: inline-block; margin-top: 20px; padding: 12px 25px; background: white; color: #007bff; border-radius: 6px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; }
-    footer { text-align: center; padding: 30px 20px; font-size: 0.9rem; color: #666; }
-    .lang-switch { position: absolute; top: 20px; right: 20px; font-size: 1rem; }
-    .lang-switch button { background: transparent; border: none; font-weight: bold; font-size: 1rem; margin-left: 8px; cursor: pointer; color: #007bff; }
-    .how-it-works img, .team img { width: 100%; max-width: 400px; border-radius: 10px; margin-top: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    form { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px; }
-    input { padding: 10px; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 6px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fefefe;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav.language-switcher {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      gap: 10px;
+      background-color: #ecf0f1;
+    }
+    nav.language-switcher button {
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 4px;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .form-section {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .form-section h2 {
+      margin-bottom: 15px;
+    }
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-section button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .how-it-works {
+      background-color: #f9f9f9;
+    }
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .step {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .step img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .meet-team img {
+      width: 180px;
+      border-radius: 16px;
+      margin: 20px auto;
+      display: block;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <div class="lang-switch">
-    🌐 <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('uz')">UZ</button>
-    <button onclick="setLanguage('ru')">RU</button>
-  </div>
-  <header>
-    <h1 id="title">SafeStep</h1>
-    <p id="subtitle">Feel Safe. Move Smart.</p>
-  </header>  <section>
-    <h2 id="about">About Us</h2>
-    <p id="aboutText">SafeStep is your personal safety companion...</p>
-  </section>  <section>
-    <h2 id="features">Features</h2>
-    <div class="features">
-      <div class="feature">
-        <h3 id="f1">📍 Real-Time Location Sharing</h3>
-        <p>Let your trusted contacts know where you are, instantly.</p>
-      </div>
-      <div class="feature">
-        <h3 id="f2">🎥 Media Evidence Backup</h3>
-        <p>Automatically save images/videos to secure cloud if you feel unsafe.</p>
-      </div>
-      <div class="feature">
-        <h3 id="f3">🛡️ Trusted Account Alerts</h3>
-        <p>Send emergency alerts to your pre-selected trusted contacts in one tap.</p>
-      </div>
-    </div>
-  </section>  <section class="cta">
-    <h2 id="waitlistTitle">Join the Waitlist</h2>
-    <p id="waitlistText">Be the first to try SafeStep.</p>
-    <form action="https://formspree.io/f/xleqglkg" method="POST">
-      <input type="email" name="email" placeholder="Email address" required />
-      <input type="text" name="address" placeholder="Your city / region" required />
+  <nav class="language-switcher">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('uz')">O'zbek</button>
+    <button onclick="changeLanguage('ru')">Русский</button>
+  </nav>  <header>
+    <h1>SafeStep</h1>
+    <p>Your safety is one tap away.</p>
+  </header>  <section class="form-section">
+    <h2>Join the Waitlist</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+      <input type="text" name="full_name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="text" name="address" placeholder="Home Address" required />
       <input type="date" name="birthdate" placeholder="Birthdate" required />
-      <button type="submit" id="waitlistBtn">Submit</button>
+      <button type="submit">Join Now</button>
     </form>
-  </section>  <section class="cta">
-    <h2 id="telegramTitle">Talk to SafeStep Assistant</h2>
-    <p id="telegramText">Need help or feel unsafe? Get support instantly on Telegram.</p>
-    <a id="telegramBtn" href="https://t.me/SafeStepAssistantbot" target="_blank">Open Telegram Bot</a>
-  </section>  <section>
-    <h2 id="teamTitle">Meet the Team</h2>
-    <div class="team" style="text-align: center;">
-      <img src="https://i.postimg.cc/xcwv3pQW/yourimage.jpg" alt="Azimova Sarvinoz">
-      <h3>Azimova Sarvinoz</h3>
-      <p>Founder & CEO of SafeStep</p>
-      <p>Student at New Uzbekistan University, passionate about tech and safety.</p>
+  </section>  <section id="how-it-works" class="how-it-works">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
+    <div class="steps-container">
+      <div class="step">
+        <img src="https://postimg.cc/rd3CN1rn" alt="Start the Bot">
+        <h3>Step 1: Start the Bot</h3>
+        <p>Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
+      </div>
+      <div class="step">
+        <img src="https://postimg.cc/HjH3ZtNR" alt="Allow Location">
+        <h3>Step 2: Allow Location</h3>
+        <p>Give the bot permission to access your live location when needed.</p>
+      </div>
+      <div class="step">
+        <img src="https://postimg.cc/tY4ky4pz" alt="Send Alert">
+        <h3>Step 3: Send Alert</h3>
+        <p>Send an SOS alert to your trusted contacts with just one tap.</p>
+      </div>
+      <div class="step">
+        <img src="https://postimg.cc/LJr3zkfy" alt="Data Secured">
+        <h3>Step 4: Stay Safe</h3>
+        <p>Your data is securely stored and accessible to trusted accounts only.</p>
+      </div>
     </div>
-  </section>  <section>
-    <h2 id="howTitle">How It Works</h2>
-    <div class="how-it-works">
-      <ol>
-        <li>Start the Telegram bot</li>
-        <li>Allow location & camera access</li>
-        <li>Send alert if you feel unsafe</li>
-        <li>Your data is stored safely & contact is alerted</li>
-      </ol>
-      <img src="https://i.ibb.co/8gSpR1v/start-bot.png" alt="Start bot">
-      <img src="https://i.ibb.co/vwCKqLC/allow-location.png" alt="Allow location">
-      <img src="https://i.ibb.co/T0p1nhN/send-alert.png" alt="Send alert">
-      <img src="https://i.ibb.co/y6M1cb4/data-saved.png" alt="Data stored">
-    </div>
+  </section>  <section class="meet-team">
+    <h2 style="text-align:center; margin-top: 60px;">Meet the Team</h2>
+    <img src="https://postimg.cc/xcwv3pQW" alt="Azimova Sarvinoz">
+    <p style="text-align:center; font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
   </section>  <footer>
-    © 2025 SafeStep. All rights reserved. | Contact: safestep@gmail.com
+    <p>&copy; 2025 SafeStep. All rights reserved.</p>
   </footer>  <script>
-    const translations = {
-      en: { title: "SafeStep", subtitle: "Feel Safe. Move Smart.", about: "About Us", aboutText: "SafeStep is your personal safety companion...", features: "Features", feature1: "📍 Real-Time Location Sharing", feature2: "🎥 Media Evidence Backup", feature3: "🛡️ Trusted Account Alerts", waitlistTitle: "Join the Waitlist", waitlistText: "Be the first to try SafeStep.", waitlistBtn: "Submit", telegramTitle: "Talk to SafeStep Assistant", telegramText: "Need help or feel unsafe? Get support instantly on Telegram.", telegramBtn: "Open Telegram Bot", teamTitle: "Meet the Team", teamText: "SafeStep was created by passionate students who care about real-world safety.", howItWorks: "How It Works" },
-      uz: { title: "SafeStep", subtitle: "O‘zingizni xavfsiz tuting. Aql bilan harakat qiling.", about: "Biz haqimizda", aboutText: "SafeStep — bu sizning shaxsiy xavfsizlik yordamchingiz...", features: "Xususiyatlar", feature1: "📍 Haqiqiy vaqtda joylashuvni ulashish", feature2: "🎥 Rasmlar va videolarni xavfsiz saqlash", feature3: "🛡️ Ishonchli kontaktlarga xavf signali yuborish", waitlistTitle: "Kutuvchilar ro‘yxati", waitlistText: "SafeStep’ni birinchi bo‘lib sinang.", waitlistBtn: "Yuborish", telegramTitle: "SafeStep yordamchisi bilan bog‘laning", telegramText: "O‘zingizni xavfsiz his qilmayapsizmi? Telegram orqali yordam oling.", telegramBtn: "Telegram botni ochish", teamTitle: "Bizning jamoamiz", teamText: "SafeStep — bu haqiqatdagi xavfsizlikni ta'minlashni istagan yoshlar tomonidan yaratilgan.", howItWorks: "Qanday ishlaydi" },
-      ru: { title: "SafeStep", subtitle: "Чувствуйте себя в безопасности. Двигайтесь умно.", about: "О нас", aboutText: "SafeStep — ваш личный помощник по безопасности...", features: "Возможности", feature1: "📍 Делитесь местоположением в реальном времени", feature2: "🎥 Сохраняйте фото и видео в облако", feature3: "🛡️ Срочные оповещения для доверенных контактов", waitlistTitle: "Список ожидания", waitlistText: "Попробуйте SafeStep первым.", waitlistBtn: "Отправить", telegramTitle: "Напишите помощнику SafeStep", telegramText: "Нужна помощь? Свяжитесь с ботом в Telegram.", telegramBtn: "Открыть Telegram-бот", teamTitle: "Наша команда", teamText: "SafeStep создан молодыми людьми, которые заботятся о реальной безопасности.", howItWorks: "Как это работает" }
-    };
-
-    function setLanguage(lang) {
-      const t = translations[lang];
-      document.getElementById('title').innerText = t.title;
-      document.getElementById('subtitle').innerText = t.subtitle;
-      document.getElementById('about').innerText = t.about;
-      document.getElementById('aboutText').innerText = t.aboutText;
-      document.getElementById('features').innerText = t.features;
-      document.getElementById('f1').innerText = t.feature1;
-      document.getElementById('f2').innerText = t.feature2;
-      document.getElementById('f3').innerText = t.feature3;
-      document.getElementById('waitlistTitle').innerText = t.waitlistTitle;
-      document.getElementById('waitlistText').innerText = t.waitlistText;
-      document.getElementById('waitlistBtn').innerText = t.waitlistBtn;
-      document.getElementById('telegramTitle').innerText = t.telegramTitle;
-      document.getElementById('telegramText').innerText = t.telegramText;
-      document.getElementById('telegramBtn').innerText = t.telegramBtn;
-      document.getElementById('teamTitle').innerText = t.teamTitle;
-      document.getElementById('teamText').innerText = t.teamText;
-      document.getElementById('howTitle').innerText = t.howItWorks;
+    function changeLanguage(lang) {
+      alert("Language switched to: " + lang + " (Functionality to be implemented)");
     }
   </script></body>
 </html>
-<div class="lang-switch">
-  🌐 
-  <button onclick="setLanguage('en')">EN</button>
-  <button onclick="setLanguage('uz')">UZ</button>
-  <button onclick="setLanguage('ru')">RU</button>
-</div>
-<!-- HOW IT WORKS SECTION START -->
-<section id="how-it-works" class="how-it-works">
-  <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
-
-  <div class="steps-container">
-    
-    <div class="step">
-      <img src="https://postimg.cc/rd3CN1rn" alt="Start the Bot">
-      <h3>Step 1: Start the Bot</h3>
-      <p>Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
-    </div>
-
-    <div class="step">
-      <img src="https://postimg.cc/HjH3ZtNR" alt="Allow Location">
-      <h3>Step 2: Allow Location</h3>
-      <p>Give the bot permission to access your live location when needed.</p>
-    </div>
-
-    <div class="step">
-      <img src="https://postimg.cc/tY4ky4pz" alt="Send Alert">
-      <h3>Step 3: Send Alert</h3>
-      <p>Send an SOS alert to your trusted contacts with just one tap.</p>
-    </div>
-
-    <div class="step">
-      <img src="https://postimg.cc/LJr3zkfy" alt="Data Secured">
-      <h3>Step 4: Stay Safe</h3>
-      <p>Your data is securely stored and accessible to trusted accounts only.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW IT WORKS SECTION END -->
-
-<!-- STYLES FOR HOW IT WORKS SECTION -->
-<style>
-  .how-it-works {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-  }
-
-  .steps-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .step {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .step:hover {
-    transform: translateY(-5px);
-  }
-
-  .step img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 15px;
-  }
-
-  .step h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #222;
-  }
-
-  .step p {
-    font-size: 15px;
-    color: #555;
-  }
-</style>
