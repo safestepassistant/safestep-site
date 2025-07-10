@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -135,19 +134,13 @@
     <button onclick="changeLanguage('en')">English</button>
     <button onclick="changeLanguage('uz')">O'zbek</button>
     <button onclick="changeLanguage('ru')">Русский</button>
-  </nav>
-
-  <header>
+  </nav>  <header>
     <h1 id="title">SafeStep</h1>
     <p id="subtitle">Your safety is one tap away</p>
-  </header>
-
-  <section class="hero">
+  </header>  <section class="hero">
     <h2 id="hero-heading">Smart & Secure Emergency Assistance</h2>
     <p id="hero-desc">With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.</p>
-  </section>
-
-  <section class="form-section">
+  </section>  <section class="form-section">
     <h2 id="form-title">Join the Waitlist</h2>
     <form action="https://formsubmit.co/azimovasarvinoz2007@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://safestep-site.vercel.app/thanks.html">
@@ -157,62 +150,48 @@
       <input type="date" name="birthdate" required />
       <button type="submit" id="join-btn">Join Now</button>
     </form>
-  </section>
-
-  <section class="bot-section">
+  </section>  <section class="bot-section">
     <h2 id="bot-title">Use Our Telegram Bot</h2>
     <p id="bot-desc">Start using SafeStep by interacting with our secure Telegram bot.</p>
     <a href="https://t.me/SafeStepAssistantbot" target="_blank">Launch Bot</a>
-  </section>
-
-  <section id="how-it-works" class="how-it-works">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
+  </section>  <section id="how-it-works" class="how-it-works">
+    <h2 id="how-title" style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
     <div class="steps-container">
       <div class="step">
-        <h3>Step 1: Start the Bot</h3>
+        <h3 id="step1-title">Step 1: Start the Bot</h3>
         <img src="https://i.postimg.cc/LJr3zkfy/step4.jpg" alt="Step 1">
-        <p>Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
+        <p id="step1-desc">Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
       </div>
       <div class="step">
-        <h3>Step 2: Allow Location</h3>
+        <h3 id="step2-title">Step 2: Allow Location</h3>
         <img src="https://i.postimg.cc/tY4ky4pz/step3.jpg" alt="Step 2">
-        <p>Give the bot permission to access your live location when needed.</p>
+        <p id="step2-desc">Give the bot permission to access your live location when needed.</p>
       </div>
       <div class="step">
-        <h3>Step 3: Send Alert</h3>
+        <h3 id="step3-title">Step 3: Send Alert</h3>
         <img src="https://i.postimg.cc/HjH3ZtNR/step2.jpg" alt="Step 3">
-        <p>Send an SOS alert to your trusted contacts with just one tap.</p>
+        <p id="step3-desc">Send an SOS alert to your trusted contacts with just one tap.</p>
       </div>
       <div class="step">
-        <h3>Step 4: Stay Safe</h3>
+        <h3 id="step4-title">Step 4: Stay Safe</h3>
         <img src="https://i.postimg.cc/rd3CN1rn/step1.jpg" alt="Step 4">
-        <p>Your data is securely stored and accessible to trusted accounts only.</p>
+        <p id="step4-desc">Your data is securely stored and accessible to trusted accounts only.</p>
       </div>
     </div>
-  </section>
-
-  <section class="meet-team">
+  </section>  <section class="meet-team">
     <h2>Meet the Team</h2>
     <img src="https://i.postimg.cc/xcwv3pQW/formal-portrait.jpg" alt="Azimova Sarvinoz">
     <p style="font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
-  </section>
-
-  <section class="faq">
+  </section>  <section class="faq">
     <h2>Frequently Asked Questions</h2>
     <p><strong>Q:</strong> Is SafeStep free to use?<br><strong>A:</strong> Yes, our basic features are always free.</p>
     <p><strong>Q:</strong> How do I start the bot?<br><strong>A:</strong> Click the Telegram link above and press “Start”.</p>
-  </section>
-
-  <section class="contact-section">
+  </section>  <section class="contact-section">
     <h2>Contact Us</h2>
     <p>Email us at <a href="mailto:azimovasarvinoz2007@gmail.com">azimovasarvinoz2007@gmail.com</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SafeStep. All rights reserved.</p>
-  </footer>
-
-  <script>
+  </section>  <footer>
+    <p>&copy; 2025 SafeStep.</p>
+  </footer>  <script>
     function changeLanguage(lang) {
       const translations = {
         en: {
@@ -223,7 +202,16 @@
           formTitle: "Join the Waitlist",
           joinBtn: "Join Now",
           botTitle: "Use Our Telegram Bot",
-          botDesc: "Start using SafeStep by interacting with our secure Telegram bot."
+          botDesc: "Start using SafeStep by interacting with our secure Telegram bot.",
+          howTitle: "How It Works",
+          step1Title: "Step 1: Start the Bot",
+          step1Desc: "Open Telegram and press the “Start” button on SafeStep Assistant Bot.",
+          step2Title: "Step 2: Allow Location",
+          step2Desc: "Give the bot permission to access your live location when needed.",
+          step3Title: "Step 3: Send Alert",
+          step3Desc: "Send an SOS alert to your trusted contacts with just one tap.",
+          step4Title: "Step 4: Stay Safe",
+          step4Desc: "Your data is securely stored and accessible to trusted accounts only."
         },
         uz: {
           title: "SafeStep",
@@ -233,7 +221,16 @@
           formTitle: "Ro'yxatga yoziling",
           joinBtn: "Yozilish",
           botTitle: "Telegram botimizdan foydalaning",
-          botDesc: "SafeStep boti bilan xavfsiz aloqa uchun boshlang."
+          botDesc: "SafeStep boti bilan xavfsiz aloqa uchun boshlang.",
+          howTitle: "Qanday ishlaydi",
+          step1Title: "1-qadam: Botni boshlash",
+          step1Desc: "Telegramni oching va SafeStep botida 'Start' tugmasini bosing.",
+          step2Title: "2-qadam: Joylashuvga ruxsat berish",
+          step2Desc: "Botga sizning jonli joylashuvingizni olishga ruxsat bering.",
+          step3Title: "3-qadam: Xavfsizlik signali yuborish",
+          step3Desc: "Faqat bitta bosish orqali ishonchli odamlarga SOS yuboring.",
+          step4Title: "4-qadam: Xavfsiz bo'ling",
+          step4Desc: "Ma'lumotlaringiz faqat ishonchli akkauntlar uchun himoyalangan saqlanadi."
         },
         ru: {
           title: "SafeStep",
@@ -243,7 +240,16 @@
           formTitle: "Присоединяйтесь к ожиданию",
           joinBtn: "Присоединиться",
           botTitle: "Используйте нашего Telegram-бота",
-          botDesc: "Начните использовать SafeStep через нашего безопасного Telegram-бота."
+          botDesc: "Начните использовать SafeStep через нашего безопасного Telegram-бота.",
+          howTitle: "Как это работает",
+          step1Title: "Шаг 1: Запустите бота",
+          step1Desc: "Откройте Telegram и нажмите кнопку 'Start' в SafeStep боте.",
+          step2Title: "Шаг 2: Разрешите доступ к местоположению",
+          step2Desc: "Разрешите боту доступ к вашему местоположению.",
+          step3Title: "Шаг 3: Отправьте сигнал",
+          step3Desc: "Отправьте сигнал SOS своим доверенным контактам одним касанием.",
+          step4Title: "Шаг 4: Будьте в безопасности",
+          step4Desc: "Ваши данные надёжно хранятся и доступны только доверенным пользователям."
         }
       };
 
@@ -256,10 +262,15 @@
       document.getElementById("join-btn").innerText = t.joinBtn;
       document.getElementById("bot-title").innerText = t.botTitle;
       document.getElementById("bot-desc").innerText = t.botDesc;
+      document.getElementById("how-title").innerText = t.howTitle;
+      document.getElementById("step1-title").innerText = t.step1Title;
+      document.getElementById("step1-desc").innerText = t.step1Desc;
+      document.getElementById("step2-title").innerText = t.step2Title;
+      document.getElementById("step2-desc").innerText = t.step2Desc;
+      document.getElementById("step3-title").innerText = t.step3Title;
+      document.getElementById("step3-desc").innerText = t.step3Desc;
+      document.getElementById("step4-title").innerText = t.step4Title;
+      document.getElementById("step4-desc").innerText = t.step4Desc;
     }
-  </script>
-</body>
+  </script></body>
 </html>
-
-
-  
