@@ -266,6 +266,31 @@
 
 
 
+<form id="join-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeTEmzD5RG3gL_Bu9cOmHgA1kSSQKuqY1yF7zWZ6OZffqCeWg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+  <input name="entry.2005620554" type="text" placeholder="Your Name" required>
+  <input name="entry.1045781291" type="email" placeholder="Your Email" required>
+  <button type="submit">Join</button>
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  var submitted = false;
+  document.getElementById('join-form').addEventListener('submit', function () {
+    submitted = true;
+  });
+
+  document.getElementById('hidden_iframe').addEventListener('load', function () {
+    if (submitted) {
+      window.location.href = "https://safestep-server.azimovasarvinoz.repl.co/thanks.html";
+    }
+  });
+</script>
+
+
+
+
+
 
 
 
