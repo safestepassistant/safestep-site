@@ -2,205 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeStep</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="title">SafeStep</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5fbff;
-      color: #333;
-    }
-    header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    nav.language-switcher {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      padding: 10px 20px;
-      background-color: #e3f2fd;
-    }
-    nav.language-switcher button {
-      padding: 6px 12px;
-      border: none;
-      border-radius: 4px;
-      background-color: #1976d2;
-      color: white;
-      cursor: pointer;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #bbdefb;
-    }
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .form-section {
-      max-width: 500px;
-      margin: 40px auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .form-section input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .form-section button {
-      width: 100%;
-      padding: 12px;
-      background-color: #0d47a1;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .bot-section, .faq, .contact-section {
-      background-color: #e3f2fd;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .bot-section a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: #1976d2;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .how-it-works {
-      background-color: #f1f8ff;
-      padding: 60px 20px;
-    }
-    .steps-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .step {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    }
-    .step img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: contain;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .meet-team {
-      background-color: #e3f2fd;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .meet-team img {
-      width: 180px;
-      border-radius: 16px;
-      margin: 20px auto;
-      display: block;
-    }
-    footer {
-      background-color: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+    body { font-family: sans-serif; margin: 0; background: #f9f9f9; }
+    .language-selector { text-align: right; padding: 10px 20px; }
+    .language-selector button { margin-left: 8px; padding: 6px 10px; cursor: pointer; border-radius: 6px; }
+    form { max-width: 400px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { background-color: #4CAF50; color: white; border: none; }
+    section { padding: 20px; text-align: center; }
+    footer { background: #333; color: white; padding: 10px; text-align: center; }
+    img { max-width: 100%; height: auto; border-radius: 10px; }
   </style>
 </head>
 <body>
-  <nav class="language-switcher">
-    <button onclick="changeLanguage('en')">English</button>
-    <button onclick="changeLanguage('uz')">O'zbek</button>
-    <button onclick="changeLanguage('ru')">Русский</button>
-  </nav>
 
-  <header>
-    <h1 id="title">SafeStep</h1>
-    <p id="subtitle">Your safety is one tap away</p>
-  </header>
+  <div class="language-selector">
+    <button onclick="changeLanguage('uz')">🇺🇿 Uzbek</button>
+    <button onclick="changeLanguage('en')">🇬🇧 English</button>
+    <button onclick="changeLanguage('ru')">🇷🇺 Русский</button>
+  </div>
 
   <section class="hero">
-    <h2 id="hero-heading">Smart & Secure Emergency Assistance</h2>
+    <h1 id="hero-heading">Smart & Secure Emergency Assistance</h1>
     <p id="hero-desc">With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.</p>
   </section>
 
-  <section class="form-section">
+  <section class="waitlist">
     <h2 id="form-title">Join the Waitlist</h2>
-    <form action="https://formsubmit.co/azimovasarvinoz2007@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://safestep-site.vercel.app/thanks.html">
-      <input type="text" name="full_name" placeholder="Full Name" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="text" name="address" placeholder="Home Address" required />
-      <input type="date" name="birthdate" required />
-      <button type="submit" id="join-btn">Join Now</button>
+    <form id="join-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeTEmzD5RG3gL_Bu9cOmHgA1kSSQKuqY1yF7zWZ6OZffqCeWg/formResponse" method="POST">
+      <input name="entry.2005620554" type="text" placeholder="Your Name" required>
+      <input name="entry.1045781291" type="email" placeholder="Your Email" required>
+      <button id="join-btn" type="submit">Join</button>
     </form>
   </section>
 
-  <section class="bot-section">
+  <section class="telegram">
     <h2 id="bot-title">Use Our Telegram Bot</h2>
     <p id="bot-desc">Start using SafeStep by interacting with our secure Telegram bot.</p>
-    <a href="https://t.me/SafeStepAssistantbot" target="_blank">Launch Bot</a>
+    <a href="https://t.me/SafeStepAssistantbot" target="_blank">Open Bot</a>
   </section>
 
-  <section id="how-it-works" class="how-it-works">
-    <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">How It Works</h2>
-    <div class="steps-container">
-      <div class="step">
-        <h3>Step 1: Start the Bot</h3>
-        <img src="https://i.postimg.cc/LJr3zkfy/step4.jpg" alt="Step 1">
-        <p>Open Telegram and press the “Start” button on SafeStep Assistant Bot.</p>
-      </div>
-      <div class="step">
-        <h3>Step 2: Allow Location</h3>
-        <img src="https://i.postimg.cc/tY4ky4pz/step3.jpg" alt="Step 2">
-        <p>Give the bot permission to access your live location when needed.</p>
-      </div>
-      <div class="step">
-        <h3>Step 3: Send Alert</h3>
-        <img src="https://i.postimg.cc/HjH3ZtNR/step2.jpg" alt="Step 3">
-        <p>Send an SOS alert to your trusted contacts with just one tap.</p>
-      </div>
-      <div class="step">
-        <h3>Step 4: Stay Safe</h3>
-        <img src="https://i.postimg.cc/rd3CN1rn/step1.jpg" alt="Step 4">
-        <p>Your data is securely stored and accessible to trusted accounts only.</p>
-      </div>
+  <section class="how-it-works">
+    <h2 id="how-title">How It Works</h2>
+    <div class="step">
+      <h3 id="step1-title">Step 1: Open App</h3>
+      <p id="step1-desc">Launch the SafeStep app from your device.</p>
+    </div>
+    <div class="step">
+      <h3 id="step2-title">Step 2: Tap to Alert</h3>
+      <p id="step2-desc">Tap the SOS button to notify your trusted contacts instantly.</p>
+    </div>
+    <div class="step">
+      <h3 id="step3-title">Step 3: Send Alert</h3>
+      <p id="step3-desc">Send an SOS alert to your trusted contacts with just one tap.</p>
+    </div>
+    <div class="step">
+      <h3 id="step4-title">Step 4: Stay Safe</h3>
+      <p id="step4-desc">Your data is securely stored and accessible to trusted accounts only.</p>
     </div>
   </section>
 
-  <section class="meet-team">
-    <h2>Meet the Team</h2>
-    <img src="https://i.postimg.cc/xcwv3pQW/formal-portrait.jpg" alt="Azimova Sarvinoz">
-    <p style="font-size:18px;">Azimova Sarvinoz<br>CEO & Founder, SafeStep<br>New Uzbekistan University student</p>
-  </section>
-
   <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <p><strong>Q:</strong> Is SafeStep free to use?<br><strong>A:</strong> Yes, our basic features are always free.</p>
-    <p><strong>Q:</strong> How do I start the bot?<br><strong>A:</strong> Click the Telegram link above and press “Start”.</p>
+    <h2 id="faq-title">Frequently Asked Questions</h2>
+    <p id="faq-q1"><strong>Q:</strong> Is SafeStep free to use?<br /><strong>A:</strong> Yes, our basic features are always free.</p>
+    <p id="faq-q2"><strong>Q:</strong> How do I start the bot?<br /><strong>A:</strong> Click the Telegram link above and press “Start”.</p>
   </section>
 
   <section class="contact-section">
@@ -213,50 +80,111 @@
   </footer>
 
   <script>
+    document.getElementById('join-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).then(() => {
+        window.location.href = "https://safestep-server.azimovasarvinoz.repl.co/thanks.html";
+      }).catch((error) => {
+        alert("❌ Something went wrong. Please try again.");
+        console.error(error);
+      });
+    });
+
     function changeLanguage(lang) {
       const translations = {
         en: {
           title: "SafeStep",
-          subtitle: "Your safety is one tap away",
           heroHeading: "Smart & Secure Emergency Assistance",
           heroDesc: "With SafeStep, help is always within reach. Instantly alert your trusted contacts and ensure your safety in any situation.",
           formTitle: "Join the Waitlist",
           joinBtn: "Join Now",
           botTitle: "Use Our Telegram Bot",
-          botDesc: "Start using SafeStep by interacting with our secure Telegram bot."
+          botDesc: "Start using SafeStep by interacting with our secure Telegram bot.",
+          howTitle: "How It Works",
+          step1Title: "Step 1: Open App",
+          step1Desc: "Launch the SafeStep app from your device.",
+          step2Title: "Step 2: Tap to Alert",
+          step2Desc: "Tap the SOS button to notify your trusted contacts instantly.",
+          step3Title: "Step 3: Send Alert",
+          step3Desc: "Send an SOS alert to your trusted contacts with just one tap.",
+          step4Title: "Step 4: Stay Safe",
+          step4Desc: "Your data is securely stored and accessible to trusted accounts only.",
+          faqTitle: "Frequently Asked Questions",
+          faqQ1: "Q: Is SafeStep free to use?\nA: Yes, our basic features are always free.",
+          faqQ2: "Q: How do I start the bot?\nA: Click the Telegram link above and press “Start”."
         },
         uz: {
           title: "SafeStep",
-          subtitle: "Xavfsizlik uchun birgina bosish yetarli",
           heroHeading: "Aqlli va xavfsiz yordam",
           heroDesc: "SafeStep orqali har doim yordam yaqin. Ishonchli odamlarga xabar yuboring va xavfsizligingizni ta'minlang.",
           formTitle: "Ro'yxatga yoziling",
           joinBtn: "Yozilish",
           botTitle: "Telegram botimizdan foydalaning",
-          botDesc: "SafeStep boti bilan xavfsiz aloqa uchun boshlang."
+          botDesc: "SafeStep boti bilan xavfsiz aloqa uchun boshlang.",
+          howTitle: "Qanday ishlaydi",
+          step1Title: "1-qadam: Ilovani oching",
+          step1Desc: "SafeStep ilovasini qurilmangizda ishga tushiring.",
+          step2Title: "2-qadam: SOS tugmasini bosing",
+          step2Desc: "Ishonchli kontaktlarga xabar yuborish uchun tugmani bosing.",
+          step3Title: "3-qadam: Xabar yuboring",
+          step3Desc: "Bir marta bosish bilan SOS xabar yuboriladi.",
+          step4Title: "4-qadam: Xavfsiz qoling",
+          step4Desc: "Ma'lumotlaringiz ishonchli tarzda saqlanadi va faqat ruxsatli kontaktlar ko‘rishi mumkin.",
+          faqTitle: "Ko‘p so‘raladigan savollar",
+          faqQ1: "S: SafeStep bepulmi?\nJ: Ha, asosiy funksiyalar har doim bepul.",
+          faqQ2: "S: Botni qanday ishga tushiraman?\nJ: Telegram havolasini bosing va 'Start' tugmasini bosing."
         },
         ru: {
           title: "SafeStep",
-          subtitle: "Ваша безопасность — всего в одном касании",
           heroHeading: "Умная и надёжная помощь",
           heroDesc: "С помощью SafeStep помощь всегда под рукой. Быстро оповестите доверенных людей и будьте в безопасности.",
           formTitle: "Присоединяйтесь к ожиданию",
           joinBtn: "Присоединиться",
           botTitle: "Используйте нашего Telegram-бота",
-          botDesc: "Начните использовать SafeStep через нашего безопасного Telegram-бота."
+          botDesc: "Начните использовать SafeStep через нашего безопасного Telegram-бота.",
+          howTitle: "Как это работает",
+          step1Title: "Шаг 1: Откройте приложение",
+          step1Desc: "Запустите приложение SafeStep на своем устройстве.",
+          step2Title: "Шаг 2: Нажмите SOS",
+          step2Desc: "Нажмите кнопку SOS, чтобы немедленно уведомить доверенных лиц.",
+          step3Title: "Шаг 3: Отправьте сигнал",
+          step3Desc: "Отправьте сигнал SOS одним нажатием.",
+          step4Title: "Шаг 4: Будьте в безопасности",
+          step4Desc: "Ваши данные надежно хранятся и доступны только доверенным лицам.",
+          faqTitle: "Часто задаваемые вопросы",
+          faqQ1: "В: SafeStep бесплатен?\nО: Да, основные функции всегда бесплатны.",
+          faqQ2: "В: Как начать использовать бота?\nО: Нажмите на ссылку Telegram и нажмите «Start»."
         }
       };
 
       const t = translations[lang];
       document.getElementById("title").innerText = t.title;
-      document.getElementById("subtitle").innerText = t.subtitle;
       document.getElementById("hero-heading").innerText = t.heroHeading;
       document.getElementById("hero-desc").innerText = t.heroDesc;
       document.getElementById("form-title").innerText = t.formTitle;
       document.getElementById("join-btn").innerText = t.joinBtn;
       document.getElementById("bot-title").innerText = t.botTitle;
       document.getElementById("bot-desc").innerText = t.botDesc;
+      document.getElementById("how-title").innerText = t.howTitle;
+      document.getElementById("step1-title").innerText = t.step1Title;
+      document.getElementById("step1-desc").innerText = t.step1Desc;
+      document.getElementById("step2-title").innerText = t.step2Title;
+      document.getElementById("step2-desc").innerText = t.step2Desc;
+      document.getElementById("step3-title").innerText = t.step3Title;
+      document.getElementById("step3-desc").innerText = t.step3Desc;
+      document.getElementById("step4-title").innerText = t.step4Title;
+      document.getElementById("step4-desc").innerText = t.step4Desc;
+      document.getElementById("faq-title").innerText = t.faqTitle;
+      document.getElementById("faq-q1").innerHTML = t.faqQ1.replace(/\n/g, "<br>");
+      document.getElementById("faq-q2").innerHTML = t.faqQ2.replace(/\n/g, "<br>");
     }
   </script>
+
 </body>
 </html>
